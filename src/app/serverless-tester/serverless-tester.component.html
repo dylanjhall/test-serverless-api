@@ -1,0 +1,25 @@
+<p>serverless-tester</p>
+<hr />
+<input
+  type="text"
+  name=""
+  id="searchBox"
+  placeholder="type 3 letters to search"
+  [(ngModel)]="searchInput"
+/>
+<span class="give-space"> </span>
+<button (click)="testApi()" [disabled]="searchInput.length < 3">
+  Test
+</button>
+<hr />
+<input type="text" name="" id="" [(ngModel)]="displayHistory" />
+<span class="give-space"> </span>
+<button (click)="getHistoryFromService()">Get History</button>
+<hr />
+<ul>
+  <li *ngFor="let image of imagesResp">
+    <a href="{{ image.link }}" target="_blank">
+      <img src="{{ image.image }}" />
+    </a>
+  </li>
+</ul>
